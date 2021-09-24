@@ -2,8 +2,12 @@ import type { NextPage } from 'next'
 import Head from 'next/head'
 import Image from 'next/image'
 import styles from './Home.module.css'
+import logger from '@/utils/logger'
 
 const Home: NextPage = () => {
+  logger.info({
+    foo: 'bar'
+  },'Entra en home');
   return (
     <div className={styles.container}>
       <Head>

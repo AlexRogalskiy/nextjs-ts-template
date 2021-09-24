@@ -14,6 +14,8 @@ export default function handler(
     request: {
       method: req.method,
       url: req.url,
+      query: req.query,
+      body: req.body,
     },
     response: {
       status: res.statusCode,
