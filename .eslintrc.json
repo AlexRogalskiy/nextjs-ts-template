@@ -1,7 +1,15 @@
 {
   "extends": ["next", "next/core-web-vitals", "prettier"],
   "rules": {
+    "import/no-unresolved": "error",
     "prefer-const": "error",
     "quotes": ["error", "single"]
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "project": "."
+      }
+    }
   }
 }

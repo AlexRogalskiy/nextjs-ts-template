@@ -1,1 +1,1 @@
-export { default } from '../../pods/Hello/hello.api';
+export { default } from '@pods/Hello/hello.api';

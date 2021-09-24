@@ -1,1 +1,1 @@
-export { default } from '../pods/Home/Home.component';
+export { default } from '@pods/Home/Home.component';
