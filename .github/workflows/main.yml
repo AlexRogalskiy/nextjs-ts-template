@@ -1,7 +1,7 @@
 name: CI
 on: [push]
 jobs:
-  lint:
+  validation:
     runs-on: ubuntu-latest
     steps:
       - name: Begin linting
@@ -27,3 +27,6 @@ jobs:
 
       - name: Run Validation
         run: yarn validate
+
+      - name: Run tests
+        run: yarn test:coverage
