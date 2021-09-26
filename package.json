@@ -7,8 +7,8 @@
     "build": "next build | pino-pretty -c",
     "start": "next start",
     "check-types": "tsc",
-    "lint": "next lint --ignore-path .gitignore",
-    "lint:fix": "next lint --fix --ignore-path .gitignore",
+    "lint": "next lint",
+    "lint:fix": "next lint --fix",
     "format": "prettier --write --list-different --ignore-path .gitignore .",
     "validate": "npm-run-all --parallel check-types lint:fix format",
     "validate:build": "npm-run-all --parallel validate build",
@@ -16,8 +16,8 @@
     "stage": "lint-staged"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,ts,tsx}": "yarn lint:fix",
-    "src/**/*.{js,jsx,ts,tsx,css,json,md}": "yarn format"
+    "*.{js,jsx,ts,tsx}": "yarn lint:fix",
+    "*.{js,jsx,ts,tsx,css,json,md}": "yarn format"
   },
   "dependencies": {
     "next": "11.1.2",
