@@ -6,4 +6,17 @@ describe('Home scene', () => {
     render(<Home currencies={[]} hasError />);
     expect(screen.getByText('There was an error')).toBeInTheDocument();
   });
+  test('must show items', () => {
+    render(
+      <Home
+        currencies={[
+          {
+            key: 'eur',
+            name: 'Euro',
+          },
+        ]}
+      />,
+    );
+    expect(screen.getByText('Euro')).toBeInTheDocument();
+  });
 });

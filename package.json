@@ -18,7 +18,7 @@
     "stage": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "next lint --fix",
+    "*.{js,jsx,ts,tsx}": "eslint src --fix",
     "*": "prettier --ignore-unknown --write"
   },
   "dependencies": {
