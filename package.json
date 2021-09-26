@@ -8,19 +8,17 @@
     "start": "next start",
     "check-types": "tsc",
     "lint": "next lint",
-    "lint:fix": "eslint src --fix",
-    "format": "prettier --list-different --ignore-path .gitignore .",
-    "format:fix": "prettier --write --list-different --ignore-path .gitignore .",
-    "validate": "npm-run-all --parallel check-types lint format",
-    "validate:fix": "npm-run-all --parallel check-types lint:fix format:fix",
+    "lint:fix": "next lint --fix",
+    "prettify": "prettier --ignore-unknown --write",
+    "format": "npm-run-all --parallel lint:fix prettify",
     "test": "jest src",
     "test:coverage": "jest src --coverage",
-    "check-build": "npm-run-all --parallel validate build",
+    "check-build": "npm-run-all --parallel check-types lint build",
     "prepare": "husky install",
     "stage": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "eslint src --fix",
+    "*.{js,jsx,ts,tsx}": "next lint --fix",
     "*": "prettier --ignore-unknown --write"
   },
   "dependencies": {
