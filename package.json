@@ -16,8 +16,8 @@
     "stage": "lint-staged"
   },
   "lint-staged": {
-    "src/*.{js,jsx,ts,tsx}": "yarn lint:fix",
-    "src/*.{js,jsx,ts,tsx,css,json,md}": "yarn format"
+    "src/**/*.{js,jsx,ts,tsx}": "yarn lint:fix",
+    "src/**/*.{js,jsx,ts,tsx,css,json,md}": "yarn format"
   },
   "dependencies": {
     "next": "11.1.2",
