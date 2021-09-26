@@ -17,12 +17,12 @@
     "jsx": "preserve",
     "baseUrl": "./src",
     "paths": {
-        "@/*": ["./*"],
-        "@components/*": ["components/*"],
-        "@modules/*": ["modules/*"],
-        "@pages/*": ["pages/*"],
-        "@scenes/*": ["scenes/*"]
-    },
+      "@/*": ["./*"],
+      "@components/*": ["components/*"],
+      "@modules/*": ["modules/*"],
+      "@pages/*": ["pages/*"],
+      "@scenes/*": ["scenes/*"]
+    }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
   "exclude": ["node_modules"]

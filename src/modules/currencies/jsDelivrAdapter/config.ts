@@ -11,7 +11,7 @@ const CONFIG = {
     url: '/currencies/eur.json',
     expiry: hoursToExpiry(1),
     fallbackFile: path.join(process.cwd(), '/public/fallbackCurrencies.json'),
-  }
+  },
 } as const;
 
 export default CONFIG;

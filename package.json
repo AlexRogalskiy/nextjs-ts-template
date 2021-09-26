@@ -5,8 +5,18 @@
   "scripts": {
     "dev": "next dev | pino-pretty -c",
     "build": "next build | pino-pretty -c",
-    "start": "next start | pino-pretty -c",
-    "lint": "next lint"
+    "start": "next start",
+    "check-types": "tsc",
+    "lint": "next lint --ignore-path .gitignore",
+    "lint:fix": "next lint --fix --ignore-path .gitignore",
+    "format": "prettier --write --list-different --ignore-path .gitignore .",
+    "validate": "npm-run-all --parallel check-types lint:fix format",
+    "validate:build": "npm-run-all --parallel validate build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx}": "yarn lint",
+    "*.{js,jsx,ts,tsx,css,json,md}": "yarn format"
   },
   "dependencies": {
     "next": "11.1.2",
@@ -20,6 +30,9 @@
     "eslint-config-next": "11.1.2",
     "eslint-config-prettier": "^8.3.0",
     "eslint-import-resolver-typescript": "^2.5.0",
+    "husky": "^7.0.2",
+    "lint-staged": "^11.1.2",
+    "npm-run-all": "^4.1.5",
     "pino-pretty": "^7.0.1",
     "prettier": "^2.4.1",
     "typescript": "4.4.3"

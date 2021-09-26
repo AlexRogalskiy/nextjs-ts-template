@@ -22,8 +22,8 @@ const jsDelivrAdapter: Adapter = {
       key,
       name: currenciesMap[key],
       value: conversionsMap[key],
-    }
-  }
+    };
+  },
 };
 
 export default jsDelivrAdapter;
