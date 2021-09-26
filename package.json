@@ -13,7 +13,6 @@
     "format": "npm-run-all --parallel lint:fix prettify",
     "test": "jest src",
     "test:coverage": "jest src --coverage",
-    "check-build": "npm-run-all --parallel check-types lint build",
     "prepare": "husky install",
     "stage": "lint-staged"
   },
