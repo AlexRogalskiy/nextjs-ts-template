@@ -9,15 +9,17 @@
     "check-types": "tsc",
     "lint": "next lint",
     "lint:fix": "eslint src --fix",
-    "format": "prettier --write --list-different --ignore-path .gitignore .",
+    "format": "prettier --list-different --ignore-path .gitignore .",
+    "format:fix": "prettier --write --list-different --ignore-path .gitignore .",
     "validate": "npm-run-all --parallel check-types lint:fix format",
+    "validate:fix": "npm-run-all --parallel check-types lint:fix format:fix",
     "validate:build": "npm-run-all --parallel validate build",
     "prepare": "husky install",
     "stage": "lint-staged"
   },
   "lint-staged": {
-    "*.{js,jsx,ts,tsx}": "yarn lint:fix",
-    "*.{js,jsx,ts,tsx,css,json,md}": "yarn format"
+    "*.{js,jsx,ts,tsx}": "yarn validate:fix",
+    "*.{js,jsx,ts,tsx,css,json,md,yml}": "yarn format:fix"
   },
   "dependencies": {
     "next": "11.1.2",
