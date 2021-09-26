@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev | pino-pretty -c",
-    "build": "next build",
-    "start": "next start",
+    "build": "next build | pino-pretty -c",
+    "start": "next start | pino-pretty -c",
     "lint": "next lint"
   },
   "dependencies": {
