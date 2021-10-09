@@ -1,6 +1,10 @@
+import { complement, isEmpty } from 'ramda';
 import { cacheFn } from '@modules/cache';
 import logger from '@modules/logger';
+import { InternalError, NotFoundError } from '@modules/error';
 import CONFIG from './config';
+
+const isNotEmpty = complement(isEmpty);
 
 export type ConversionsMap = Record<string, number>;
 
@@ -10,7 +14,7 @@ const fetchConversions = async (): Promise<ConversionsMap> => {
   logger.info('Fetching conversions');
   const response = await fetch(`${CONFIG.baseURL}${CONFIG.conversions.url}`);
   if (!response.ok) {
-    throw new Error('CONVERSIONS_NOT_FOUND');
+    throw new NotFoundError('Error fetching conversions');
   }
   return response.json();
 };
@@ -18,18 +22,18 @@ const fetchConversions = async (): Promise<ConversionsMap> => {
 const getConversionsMap = cacheFn(CONFIG.conversions.expiry, async () => {
   try {
     const latestConversions = await fetchConversions();
-    if (latestConversions && Object.keys(latestConversions).length) {
+    if (isNotEmpty(latestConversions)) {
       latestValidMap = latestConversions;
       return latestConversions;
     }
-    throw new Error('CONVERSIONS_NOT_FOUND');
+    throw new NotFoundError('Error fetching conversions');
   } catch (e) {
-    logger.error(e, 'Conversions not found');
-    if (latestValidMap && Object.keys(latestValidMap).length) {
+    logger.warn(e);
+    if (isNotEmpty(latestValidMap)) {
       return latestValidMap;
     }
     logger.info('latestValidMap is empty for conversions');
-    throw new Error('CONVERSIONS_ERROR');
+    throw new InternalError('Could not return conversions');
   }
 });
 

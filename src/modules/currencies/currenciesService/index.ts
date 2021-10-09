@@ -1,5 +1,5 @@
 import CurrenciesService from './CurrenciesService';
-import jsDelivrAdapter from '../jsDelivrAdapter';
+import jsDelivrAdapter from './jsDelivrAdapter';
 
 const currenciesService = CurrenciesService(jsDelivrAdapter);
 

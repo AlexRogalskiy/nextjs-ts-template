@@ -1,5 +1,10 @@
-name: CI
-on: [push]
+name: Linting
+on:
+  push:
+    branches: [master, main]
+    # Remove the line above to run when pushing to master
+  pull_request:
+    branches: [master, main]
 jobs:
   validation:
     runs-on: ubuntu-latest

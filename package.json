@@ -21,8 +21,10 @@
     "*": "prettier --ignore-unknown --write"
   },
   "dependencies": {
+    "@types/ramda": "^0.27.45",
     "next": "11.1.2",
     "pino": "^7.0.0-rc.7",
+    "ramda": "^0.27.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
   },

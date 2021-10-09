@@ -1,5 +1,10 @@
-name: CI
-on: [push]
+name: Testing
+on:
+  push:
+    branches: [master, main]
+    # Remove the line above to run when pushing to master
+  pull_request:
+    branches: [master, main]
 jobs:
   building:
     runs-on: ubuntu-latest

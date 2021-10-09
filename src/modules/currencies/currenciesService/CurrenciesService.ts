@@ -1,12 +1,12 @@
+import { andThen, map, pipe, prop } from 'ramda';
 import { Adapter } from '../types';
 
+const getKeyForEach = map(prop('key'));
+
 const CurrenciesService = (adapter: Adapter) => ({
-  listCurrencies: () => adapter.list(),
-  getCurrencyDetail: (key: string) => adapter.get(key),
-  listCurrenciesKeys: async () => {
-    const currencies = await adapter.list();
-    return currencies.map(({ key }) => key);
-  },
+  listCurrencies: adapter.list,
+  getCurrencyDetail: adapter.get,
+  listCurrenciesKeys: pipe(adapter.list, andThen(getKeyForEach)),
 });
 
 export default CurrenciesService;

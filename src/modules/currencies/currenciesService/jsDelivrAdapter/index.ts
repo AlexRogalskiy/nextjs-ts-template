@@ -1,6 +1,6 @@
 import getCurrenciesMap, { CurrenciesMap } from './getCurrenciesMap';
 import getConversionsMap from './getConversionsMap';
-import { Adapter, Currencies } from '../types';
+import { Adapter, Currencies } from '../../types';
 
 const currenciesMapToList = (currenciesMap: CurrenciesMap) => {
   const initial: Currencies = [];

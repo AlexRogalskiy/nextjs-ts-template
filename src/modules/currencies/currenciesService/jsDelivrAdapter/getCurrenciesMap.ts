@@ -27,12 +27,14 @@ const getSavedCurrencies = (): CurrenciesMap => {
   throw new NotFoundError('Error fetching latest valid currencies');
 };
 
-const getStoredCurrencies = (): Promise<CurrenciesMap> =>
-  readFile(CONFIG.conversions.fallbackFile, 'utf-8')
-    .then((response) => JSON.parse(response))
-    .catch((e) => {
-      throw new InternalError('Could not read fallback currencies');
-    });
+const getStoredCurrencies = async (): Promise<CurrenciesMap> => {
+  try {
+    const response = await readFile(CONFIG.conversions.fallbackFile, 'utf-8');
+    return JSON.parse(response);
+  } catch (e) {
+    throw new InternalError('Could not read fallback currencies');
+  }
+};
 
 const getFallbackCurrencies = async (): Promise<CurrenciesMap> => {
   try {
