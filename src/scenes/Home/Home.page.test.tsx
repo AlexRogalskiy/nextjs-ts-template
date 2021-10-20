@@ -1,10 +1,10 @@
-import { render, screen, waitFor } from '@testing-library/react';
-import Home from './Home.component';
+import { render, screen } from '@testing-library/react';
+import Home, { ERROR_MESSAGE } from './Home.page';
 
 describe('Home scene', () => {
   test('must show error message', () => {
     render(<Home currencies={[]} hasError />);
-    expect(screen.getByText('There was an error')).toBeInTheDocument();
+    expect(screen.getByText(ERROR_MESSAGE)).toBeInTheDocument();
   });
   test('must show items', () => {
     render(

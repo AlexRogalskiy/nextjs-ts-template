@@ -1,3 +1,3 @@
-import '@scenes/App/app.globals.css';
+import '@/scenes/App/app.globals.css';
 
-export { default } from '@scenes/App/App.component';
+export { default } from '@/scenes/App/App.component';

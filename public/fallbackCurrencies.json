@@ -1,183 +1,726 @@
-{
-  "ada": "Cardano",
-  "aed": "United Arab Emirates Dirham",
-  "afn": "Afghan afghani",
-  "all": "Albanian lek",
-  "amd": "Armenian dram",
-  "ang": "Netherlands Antillean Guilder",
-  "aoa": "Angolan kwanza",
-  "ars": "Argentine peso",
-  "aud": "Australian dollar",
-  "awg": "Aruban florin",
-  "azn": "Azerbaijani manat",
-  "bam": "Bosnia-Herzegovina Convertible Mark",
-  "bbd": "Bajan dollar",
-  "bch": "Bitcoin Cash",
-  "bdt": "Bangladeshi taka",
-  "bgn": "Bulgarian lev",
-  "bhd": "Bahraini dinar",
-  "bif": "Burundian Franc",
-  "bmd": "Bermudan dollar",
-  "bnb": "Binance Coin",
-  "bnd": "Brunei dollar",
-  "bob": "Bolivian boliviano",
-  "brl": "Brazilian real",
-  "bsd": "Bahamian dollar",
-  "btc": "Bitcoin",
-  "btn": "Bhutan currency",
-  "bwp": "Botswanan Pula",
-  "byn": "New Belarusian Ruble",
-  "byr": "Belarusian Ruble",
-  "bzd": "Belize dollar",
-  "cad": "Canadian dollar",
-  "cdf": "Congolese franc",
-  "chf": "Swiss franc",
-  "clf": "Chilean Unit of Account (UF)",
-  "clp": "Chilean peso",
-  "cny": "Chinese Yuan",
-  "cop": "Colombian peso",
-  "crc": "Costa Rican Colón",
-  "cuc": "Cuban peso",
-  "cup": "Cuban Peso",
-  "cve": "Cape Verdean escudo",
-  "czk": "Czech koruna",
-  "djf": "Djiboutian franc",
-  "dkk": "Danish krone",
-  "doge": "Dogecoin",
-  "dop": "Dominican peso",
-  "dzd": "Algerian dinar",
-  "egp": "Egyptian pound",
-  "ern": "Eritrean nakfa",
-  "etb": "Ethiopian birr",
-  "etc": "Ethereum Classic",
-  "eth": "Ether",
-  "eur": "Euro",
-  "fjd": "Fijian dollar",
-  "fkp": "Falkland Islands pound",
-  "gbp": "Pound sterling",
-  "gel": "Georgian lari",
-  "ggp": "GGPro",
-  "ghs": "Ghanaian cedi",
-  "gip": "Gibraltar pound",
-  "gmd": "Gambian dalasi",
-  "gnf": "Guinean franc",
-  "gtq": "Guatemalan quetzal",
-  "gyd": "Guyanaese Dollar",
-  "hkd": "Hong Kong dollar",
-  "hnl": "Honduran lempira",
-  "hrk": "Croatian kuna",
-  "htg": "Haitian gourde",
-  "huf": "Hungarian forint",
-  "idr": "Indonesian rupiah",
-  "ils": "Israeli New Shekel",
-  "imp": "CoinIMP",
-  "inr": "Indian rupee",
-  "iqd": "Iraqi dinar",
-  "irr": "Iranian rial",
-  "isk": "Icelandic króna",
-  "jep": "Jersey Pound",
-  "jmd": "Jamaican dollar",
-  "jod": "Jordanian dinar",
-  "jpy": "Japanese yen",
-  "kes": "Kenyan shilling",
-  "kgs": "Kyrgystani Som",
-  "khr": "Cambodian riel",
-  "kmf": "Comorian franc",
-  "kpw": "North Korean won",
-  "krw": "South Korean won",
-  "kwd": "Kuwaiti dinar",
-  "kyd": "Cayman Islands dollar",
-  "kzt": "Kazakhstani tenge",
-  "lak": "Laotian Kip",
-  "lbp": "Lebanese pound",
-  "link": "ChainLink",
-  "lkr": "Sri Lankan rupee",
-  "lrd": "Liberian dollar",
-  "lsl": "Lesotho loti",
-  "ltc": "Litecoin",
-  "ltl": "Lithuanian litas",
-  "lvl": "Latvian lats",
-  "lyd": "Libyan dinar",
-  "mad": "Moroccan dirham",
-  "mdl": "Moldovan leu",
-  "mga": "Malagasy ariary",
-  "mkd": "Macedonian denar",
-  "mmk": "Myanmar Kyat",
-  "mnt": "Mongolian tugrik",
-  "mop": "Macanese pataca",
-  "mro": "Mauritanian ouguiya",
-  "mur": "Mauritian rupee",
-  "mvr": "Maldivian rufiyaa",
-  "mwk": "Malawian kwacha",
-  "mxn": "Mexican peso",
-  "myr": "Malaysian ringgit",
-  "mzn": "Mozambican Metical",
-  "nad": "Namibian dollar",
-  "ngn": "Nigerian naira",
-  "nio": "Nicaraguan córdoba",
-  "nok": "Norwegian krone",
-  "npr": "Nepalese rupee",
-  "nzd": "New Zealand dollar",
-  "omr": "Omani rial",
-  "pab": "Panamanian balboa",
-  "pen": "Sol",
-  "pgk": "Papua New Guinean kina",
-  "php": "Philippine peso",
-  "pkr": "Pakistani rupee",
-  "pln": "Poland złoty",
-  "pyg": "Paraguayan guarani",
-  "qar": "Qatari Rial",
-  "ron": "Romanian leu",
-  "rsd": "Serbian dinar",
-  "rub": "Russian ruble",
-  "rwf": "Rwandan Franc",
-  "sar": "Saudi riyal",
-  "sbd": "Solomon Islands dollar",
-  "scr": "Seychellois rupee",
-  "sdg": "Sudanese pound",
-  "sek": "Swedish krona",
-  "sgd": "Singapore dollar",
-  "shp": "Saint Helena pound",
-  "sll": "Sierra Leonean leone",
-  "sos": "Somali shilling",
-  "srd": "Surinamese dollar",
-  "std": "São Tomé and Príncipe Dobra (pre-2018)",
-  "svc": "Salvadoran Colón",
-  "syp": "Syrian pound",
-  "szl": "Swazi lilangeni",
-  "thb": "Thai baht",
-  "theta": "Theta",
-  "tjs": "Tajikistani somoni",
-  "tmt": "Turkmenistani manat",
-  "tnd": "Tunisian dinar",
-  "top": "Tongan Paʻanga",
-  "trx": "TRON",
-  "try": "Turkish lira",
-  "ttd": "Trinidad & Tobago Dollar",
-  "twd": "New Taiwan dollar",
-  "tzs": "Tanzanian shilling",
-  "uah": "Ukrainian hryvnia",
-  "ugx": "Ugandan shilling",
-  "usd": "United States dollar",
-  "usdt": "Tether",
-  "uyu": "Uruguayan peso",
-  "uzs": "Uzbekistani som",
-  "vef": "Sovereign Bolivar",
-  "vnd": "Vietnamese dong",
-  "vuv": "Vanuatu vatu",
-  "wst": "Samoan tala",
-  "xaf": "Central African CFA franc",
-  "xag": "Silver Ounce",
-  "xau": "XauCoin",
-  "xcd": "East Caribbean dollar",
-  "xdr": "Special Drawing Rights",
-  "xlm": "Stellar",
-  "xof": "West African CFA franc",
-  "xpf": "CFP franc",
-  "xrp": "XRP",
-  "yer": "Yemeni rial",
-  "zar": "South African rand",
-  "zmk": "Zambian kwacha",
-  "zmw": "Zambian Kwacha",
-  "zwl": "Zimbabwean Dollar"
-}
+[
+  {
+    "key": "ada",
+    "name": "Cardano"
+  },
+  {
+    "key": "aed",
+    "name": "United Arab Emirates Dirham"
+  },
+  {
+    "key": "afn",
+    "name": "Afghan afghani"
+  },
+  {
+    "key": "all",
+    "name": "Albanian lek"
+  },
+  {
+    "key": "amd",
+    "name": "Armenian dram"
+  },
+  {
+    "key": "ang",
+    "name": "Netherlands Antillean Guilder"
+  },
+  {
+    "key": "aoa",
+    "name": "Angolan kwanza"
+  },
+  {
+    "key": "ars",
+    "name": "Argentine peso"
+  },
+  {
+    "key": "aud",
+    "name": "Australian dollar"
+  },
+  {
+    "key": "awg",
+    "name": "Aruban florin"
+  },
+  {
+    "key": "azn",
+    "name": "Azerbaijani manat"
+  },
+  {
+    "key": "bam",
+    "name": "Bosnia-Herzegovina Convertible Mark"
+  },
+  {
+    "key": "bbd",
+    "name": "Bajan dollar"
+  },
+  {
+    "key": "bch",
+    "name": "Bitcoin Cash"
+  },
+  {
+    "key": "bdt",
+    "name": "Bangladeshi taka"
+  },
+  {
+    "key": "bgn",
+    "name": "Bulgarian lev"
+  },
+  {
+    "key": "bhd",
+    "name": "Bahraini dinar"
+  },
+  {
+    "key": "bif",
+    "name": "Burundian Franc"
+  },
+  {
+    "key": "bmd",
+    "name": "Bermudan dollar"
+  },
+  {
+    "key": "bnb",
+    "name": "Binance Coin"
+  },
+  {
+    "key": "bnd",
+    "name": "Brunei dollar"
+  },
+  {
+    "key": "bob",
+    "name": "Bolivian boliviano"
+  },
+  {
+    "key": "brl",
+    "name": "Brazilian real"
+  },
+  {
+    "key": "bsd",
+    "name": "Bahamian dollar"
+  },
+  {
+    "key": "btc",
+    "name": "Bitcoin"
+  },
+  {
+    "key": "btn",
+    "name": "Bhutan currency"
+  },
+  {
+    "key": "bwp",
+    "name": "Botswanan Pula"
+  },
+  {
+    "key": "byn",
+    "name": "New Belarusian Ruble"
+  },
+  {
+    "key": "byr",
+    "name": "Belarusian Ruble"
+  },
+  {
+    "key": "bzd",
+    "name": "Belize dollar"
+  },
+  {
+    "key": "cad",
+    "name": "Canadian dollar"
+  },
+  {
+    "key": "cdf",
+    "name": "Congolese franc"
+  },
+  {
+    "key": "chf",
+    "name": "Swiss franc"
+  },
+  {
+    "key": "clf",
+    "name": "Chilean Unit of Account (UF)"
+  },
+  {
+    "key": "clp",
+    "name": "Chilean peso"
+  },
+  {
+    "key": "cny",
+    "name": "Chinese Yuan"
+  },
+  {
+    "key": "cop",
+    "name": "Colombian peso"
+  },
+  {
+    "key": "crc",
+    "name": "Costa Rican Colón"
+  },
+  {
+    "key": "cuc",
+    "name": "Cuban peso"
+  },
+  {
+    "key": "cup",
+    "name": "Cuban Peso"
+  },
+  {
+    "key": "cve",
+    "name": "Cape Verdean escudo"
+  },
+  {
+    "key": "czk",
+    "name": "Czech koruna"
+  },
+  {
+    "key": "djf",
+    "name": "Djiboutian franc"
+  },
+  {
+    "key": "dkk",
+    "name": "Danish krone"
+  },
+  {
+    "key": "doge",
+    "name": "Dogecoin"
+  },
+  {
+    "key": "dop",
+    "name": "Dominican peso"
+  },
+  {
+    "key": "dzd",
+    "name": "Algerian dinar"
+  },
+  {
+    "key": "egp",
+    "name": "Egyptian pound"
+  },
+  {
+    "key": "ern",
+    "name": "Eritrean nakfa"
+  },
+  {
+    "key": "etb",
+    "name": "Ethiopian birr"
+  },
+  {
+    "key": "etc",
+    "name": "Ethereum Classic"
+  },
+  {
+    "key": "eth",
+    "name": "Ether"
+  },
+  {
+    "key": "eur",
+    "name": "Euro"
+  },
+  {
+    "key": "fjd",
+    "name": "Fijian dollar"
+  },
+  {
+    "key": "fkp",
+    "name": "Falkland Islands pound"
+  },
+  {
+    "key": "gbp",
+    "name": "Pound sterling"
+  },
+  {
+    "key": "gel",
+    "name": "Georgian lari"
+  },
+  {
+    "key": "ggp",
+    "name": "GGPro"
+  },
+  {
+    "key": "ghs",
+    "name": "Ghanaian cedi"
+  },
+  {
+    "key": "gip",
+    "name": "Gibraltar pound"
+  },
+  {
+    "key": "gmd",
+    "name": "Gambian dalasi"
+  },
+  {
+    "key": "gnf",
+    "name": "Guinean franc"
+  },
+  {
+    "key": "gtq",
+    "name": "Guatemalan quetzal"
+  },
+  {
+    "key": "gyd",
+    "name": "Guyanaese Dollar"
+  },
+  {
+    "key": "hkd",
+    "name": "Hong Kong dollar"
+  },
+  {
+    "key": "hnl",
+    "name": "Honduran lempira"
+  },
+  {
+    "key": "hrk",
+    "name": "Croatian kuna"
+  },
+  {
+    "key": "htg",
+    "name": "Haitian gourde"
+  },
+  {
+    "key": "huf",
+    "name": "Hungarian forint"
+  },
+  {
+    "key": "idr",
+    "name": "Indonesian rupiah"
+  },
+  {
+    "key": "ils",
+    "name": "Israeli New Shekel"
+  },
+  {
+    "key": "imp",
+    "name": "CoinIMP"
+  },
+  {
+    "key": "inr",
+    "name": "Indian rupee"
+  },
+  {
+    "key": "iqd",
+    "name": "Iraqi dinar"
+  },
+  {
+    "key": "irr",
+    "name": "Iranian rial"
+  },
+  {
+    "key": "isk",
+    "name": "Icelandic króna"
+  },
+  {
+    "key": "jep",
+    "name": "Jersey Pound"
+  },
+  {
+    "key": "jmd",
+    "name": "Jamaican dollar"
+  },
+  {
+    "key": "jod",
+    "name": "Jordanian dinar"
+  },
+  {
+    "key": "jpy",
+    "name": "Japanese yen"
+  },
+  {
+    "key": "kes",
+    "name": "Kenyan shilling"
+  },
+  {
+    "key": "kgs",
+    "name": "Kyrgystani Som"
+  },
+  {
+    "key": "khr",
+    "name": "Cambodian riel"
+  },
+  {
+    "key": "kmf",
+    "name": "Comorian franc"
+  },
+  {
+    "key": "kpw",
+    "name": "North Korean won"
+  },
+  {
+    "key": "krw",
+    "name": "South Korean won"
+  },
+  {
+    "key": "kwd",
+    "name": "Kuwaiti dinar"
+  },
+  {
+    "key": "kyd",
+    "name": "Cayman Islands dollar"
+  },
+  {
+    "key": "kzt",
+    "name": "Kazakhstani tenge"
+  },
+  {
+    "key": "lak",
+    "name": "Laotian Kip"
+  },
+  {
+    "key": "lbp",
+    "name": "Lebanese pound"
+  },
+  {
+    "key": "link",
+    "name": "ChainLink"
+  },
+  {
+    "key": "lkr",
+    "name": "Sri Lankan rupee"
+  },
+  {
+    "key": "lrd",
+    "name": "Liberian dollar"
+  },
+  {
+    "key": "lsl",
+    "name": "Lesotho loti"
+  },
+  {
+    "key": "ltc",
+    "name": "Litecoin"
+  },
+  {
+    "key": "ltl",
+    "name": "Lithuanian litas"
+  },
+  {
+    "key": "lvl",
+    "name": "Latvian lats"
+  },
+  {
+    "key": "lyd",
+    "name": "Libyan dinar"
+  },
+  {
+    "key": "mad",
+    "name": "Moroccan dirham"
+  },
+  {
+    "key": "mdl",
+    "name": "Moldovan leu"
+  },
+  {
+    "key": "mga",
+    "name": "Malagasy ariary"
+  },
+  {
+    "key": "mkd",
+    "name": "Macedonian denar"
+  },
+  {
+    "key": "mmk",
+    "name": "Myanmar Kyat"
+  },
+  {
+    "key": "mnt",
+    "name": "Mongolian tugrik"
+  },
+  {
+    "key": "mop",
+    "name": "Macanese pataca"
+  },
+  {
+    "key": "mro",
+    "name": "Mauritanian ouguiya"
+  },
+  {
+    "key": "mur",
+    "name": "Mauritian rupee"
+  },
+  {
+    "key": "mvr",
+    "name": "Maldivian rufiyaa"
+  },
+  {
+    "key": "mwk",
+    "name": "Malawian kwacha"
+  },
+  {
+    "key": "mxn",
+    "name": "Mexican peso"
+  },
+  {
+    "key": "myr",
+    "name": "Malaysian ringgit"
+  },
+  {
+    "key": "mzn",
+    "name": "Mozambican Metical"
+  },
+  {
+    "key": "nad",
+    "name": "Namibian dollar"
+  },
+  {
+    "key": "ngn",
+    "name": "Nigerian naira"
+  },
+  {
+    "key": "nio",
+    "name": "Nicaraguan córdoba"
+  },
+  {
+    "key": "nok",
+    "name": "Norwegian krone"
+  },
+  {
+    "key": "npr",
+    "name": "Nepalese rupee"
+  },
+  {
+    "key": "nzd",
+    "name": "New Zealand dollar"
+  },
+  {
+    "key": "omr",
+    "name": "Omani rial"
+  },
+  {
+    "key": "pab",
+    "name": "Panamanian balboa"
+  },
+  {
+    "key": "pen",
+    "name": "Sol"
+  },
+  {
+    "key": "pgk",
+    "name": "Papua New Guinean kina"
+  },
+  {
+    "key": "php",
+    "name": "Philippine peso"
+  },
+  {
+    "key": "pkr",
+    "name": "Pakistani rupee"
+  },
+  {
+    "key": "pln",
+    "name": "Poland złoty"
+  },
+  {
+    "key": "pyg",
+    "name": "Paraguayan guarani"
+  },
+  {
+    "key": "qar",
+    "name": "Qatari Rial"
+  },
+  {
+    "key": "ron",
+    "name": "Romanian leu"
+  },
+  {
+    "key": "rsd",
+    "name": "Serbian dinar"
+  },
+  {
+    "key": "rub",
+    "name": "Russian ruble"
+  },
+  {
+    "key": "rwf",
+    "name": "Rwandan Franc"
+  },
+  {
+    "key": "sar",
+    "name": "Saudi riyal"
+  },
+  {
+    "key": "sbd",
+    "name": "Solomon Islands dollar"
+  },
+  {
+    "key": "scr",
+    "name": "Seychellois rupee"
+  },
+  {
+    "key": "sdg",
+    "name": "Sudanese pound"
+  },
+  {
+    "key": "sek",
+    "name": "Swedish krona"
+  },
+  {
+    "key": "sgd",
+    "name": "Singapore dollar"
+  },
+  {
+    "key": "shp",
+    "name": "Saint Helena pound"
+  },
+  {
+    "key": "sll",
+    "name": "Sierra Leonean leone"
+  },
+  {
+    "key": "sos",
+    "name": "Somali shilling"
+  },
+  {
+    "key": "srd",
+    "name": "Surinamese dollar"
+  },
+  {
+    "key": "std",
+    "name": "São Tomé and Príncipe Dobra (pre-2018)"
+  },
+  {
+    "key": "svc",
+    "name": "Salvadoran Colón"
+  },
+  {
+    "key": "syp",
+    "name": "Syrian pound"
+  },
+  {
+    "key": "szl",
+    "name": "Swazi lilangeni"
+  },
+  {
+    "key": "thb",
+    "name": "Thai baht"
+  },
+  {
+    "key": "theta",
+    "name": "Theta"
+  },
+  {
+    "key": "tjs",
+    "name": "Tajikistani somoni"
+  },
+  {
+    "key": "tmt",
+    "name": "Turkmenistani manat"
+  },
+  {
+    "key": "tnd",
+    "name": "Tunisian dinar"
+  },
+  {
+    "key": "top",
+    "name": "Tongan Paʻanga"
+  },
+  {
+    "key": "trx",
+    "name": "TRON"
+  },
+  {
+    "key": "try",
+    "name": "Turkish lira"
+  },
+  {
+    "key": "ttd",
+    "name": "Trinidad & Tobago Dollar"
+  },
+  {
+    "key": "twd",
+    "name": "New Taiwan dollar"
+  },
+  {
+    "key": "tzs",
+    "name": "Tanzanian shilling"
+  },
+  {
+    "key": "uah",
+    "name": "Ukrainian hryvnia"
+  },
+  {
+    "key": "ugx",
+    "name": "Ugandan shilling"
+  },
+  {
+    "key": "usd",
+    "name": "United States dollar"
+  },
+  {
+    "key": "usdt",
+    "name": "Tether"
+  },
+  {
+    "key": "uyu",
+    "name": "Uruguayan peso"
+  },
+  {
+    "key": "uzs",
+    "name": "Uzbekistani som"
+  },
+  {
+    "key": "vef",
+    "name": "Sovereign Bolivar"
+  },
+  {
+    "key": "vnd",
+    "name": "Vietnamese dong"
+  },
+  {
+    "key": "vuv",
+    "name": "Vanuatu vatu"
+  },
+  {
+    "key": "wst",
+    "name": "Samoan tala"
+  },
+  {
+    "key": "xaf",
+    "name": "Central African CFA franc"
+  },
+  {
+    "key": "xag",
+    "name": "Silver Ounce"
+  },
+  {
+    "key": "xau",
+    "name": "XauCoin"
+  },
+  {
+    "key": "xcd",
+    "name": "East Caribbean dollar"
+  },
+  {
+    "key": "xdr",
+    "name": "Special Drawing Rights"
+  },
+  {
+    "key": "xlm",
+    "name": "Stellar"
+  },
+  {
+    "key": "xof",
+    "name": "West African CFA franc"
+  },
+  {
+    "key": "xpf",
+    "name": "CFP franc"
+  },
+  {
+    "key": "xrp",
+    "name": "XRP"
+  },
+  {
+    "key": "yer",
+    "name": "Yemeni rial"
+  },
+  {
+    "key": "zar",
+    "name": "South African rand"
+  },
+  {
+    "key": "zmk",
+    "name": "Zambian kwacha"
+  },
+  {
+    "key": "zmw",
+    "name": "Zambian Kwacha"
+  },
+  {
+    "key": "zwl",
+    "name": "Zimbabwean Dollar"
+  }
+]

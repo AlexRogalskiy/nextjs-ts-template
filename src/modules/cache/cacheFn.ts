@@ -1,15 +1,44 @@
-type CachedFn<A, R> = (...args: A[]) => R;
+import * as R from 'remeda';
+
+export type CachedFn<A, R> = (...args: A[]) => R;
+
+interface CacheItem<R> {
+  updatedTime: number;
+  data: R;
+}
+
+const makeIsExpired =
+  (expiry: number) =>
+  <R>(item: CacheItem<R>) => {
+    const currentDate = Date.now();
+    return currentDate - item.updatedTime > expiry;
+  };
+
+const buildCacheItem = <R>(data: R) => ({
+  updatedTime: Date.now(),
+  data,
+});
 
 const cacheFn = <F extends CachedFn<any, any>>(expiry: number, fn: F) => {
-  let updatedTime = 0;
-  let data: ReturnType<F>;
+  let cacheMap: Record<string, CacheItem<ReturnType<F>>> = {};
+  const isExpired = makeIsExpired(expiry);
+
   return (...args: Parameters<F>) => {
-    if (Date.now() - updatedTime <= expiry) {
-      return data;
+    const key = JSON.stringify(args);
+    if (!cacheMap[key] || isExpired(cacheMap[key])) {
+      const data = fn(...args);
+
+      cacheMap = R.set(cacheMap, key, buildCacheItem(data));
+
+      if (R.isPromise(data)) {
+        data.catch((e: Error) => {
+          cacheMap = R.omit(cacheMap, [key]);
+          return e;
+        });
+      }
     }
-    data = fn(...args);
-    updatedTime = Date.now();
-    return data;
+
+    return cacheMap[key].data;
   };
 };
 
