@@ -21,11 +21,15 @@
     "*": "prettier --ignore-unknown --write"
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.6.10",
+    "@emotion/react": "^11",
+    "@emotion/styled": "^11",
     "@types/color-hash": "^1.0.1",
     "@types/date-fns": "^2.6.0",
     "@types/ramda": "^0.27.45",
     "color-hash": "^2.0.1",
     "date-fns": "^2.25.0",
+    "framer-motion": "^4",
     "next": "11.1.2",
     "pino": "^7.0.0-rc.7",
     "ramda": "^0.27.1",

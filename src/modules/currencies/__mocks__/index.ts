@@ -1,4 +1,4 @@
-export type { Currencies, CurrencyDetail } from '../types';
+export type { Currencies, CurrencyDetail, CurrencyConversions } from '../types';
 
 import listData from './list.json';
 import conversionsData from './conversions.json';

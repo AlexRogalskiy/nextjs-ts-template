@@ -1,19 +1,14 @@
 import { FC } from 'react';
-import styles from './ScreenWrapper.module.css';
+import { Box, BoxProps } from '@chakra-ui/react';
 
-interface Props {
-  bg?: string;
-}
-
-const ScreenWrapper: FC<Props> = ({ children, bg = '#eee' }) => (
-  <div
-    className={styles.main}
-    style={{
-      backgroundColor: bg,
-    }}
-  >
-    {children}
-  </div>
+const ScreenWrapper: FC<BoxProps> = (props) => (
+  <Box
+    bgColor="gray.100"
+    {...props}
+    minHeight="100vh"
+    padding="24px"
+    transition="background-color 1s"
+  />
 );
 
 export default ScreenWrapper;

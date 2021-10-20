@@ -1,12 +1,18 @@
-import * as R from 'remeda';
 import type { NextApiRequest, NextApiResponse } from 'next';
 import { format, subDays } from 'date-fns';
-import logger from '@/modules/logger';
 import { currenciesService } from '@/modules/currencies';
+
+export interface ConversionsHistory {
+  dates: ReadonlyArray<string>;
+  conversions: ReadonlyArray<{
+    key: string;
+    values: number[];
+  }>;
+}
 
 const conversionsHistory = async (
   req: NextApiRequest,
-  res: NextApiResponse,
+  res: NextApiResponse<{ error: string } | ConversionsHistory>,
 ) => {
   const currencyKey = req.query.key as string;
   const dateStr = req.query.date as string;
@@ -37,10 +43,12 @@ const conversionsHistory = async (
       values: result.map(({ conversions }) => conversions[key] || 0),
     }));
 
-    res.status(200).json({
+    const response = {
       dates,
       conversions,
-    });
+    };
+
+    res.status(200).json(response);
   }
 };
 

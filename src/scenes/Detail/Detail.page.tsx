@@ -1,18 +1,18 @@
+import { FC } from 'react';
 import type { NextPage } from 'next';
 import Head from 'next/head';
-import Link from 'next/link';
-import ColorHash from 'color-hash';
+import NextLink from 'next/link';
+import { Box, Button, Flex, Heading, Link, Text } from '@chakra-ui/react';
 import { CurrencyDetail } from '@/modules/currencies';
+import colorHashers from '@/modules/colorHashers';
 import ScreenWrapper from '@/components/ScreenWrapper';
 import ErrorScreen from '@/components/ErrorScreen';
-import SimpleGrid from '@/components/SimpleGrid';
-import { Card, CardTitle, CardText } from '@/components/Card';
-import styles from './Detail.module.css';
+import ItemGrid from '@/components/ItemGrid';
+import ItemCard from '@/components/ItemCard';
+import ConversionLine from '@/components/ConversionLine';
+import HistoryTable from './HistoryTable';
 import getReversedConversion from './getReversedConversion';
-import { FC } from 'react';
-
-const bgColorHash = new ColorHash({ lightness: 0.95, saturation: 0.15 });
-const textColorHash = new ColorHash({ lightness: 0.35, saturation: 0.35 });
+import useFetchConversionsHistory from './useFetchConversionsHistory';
 
 export const ERROR_MESSAGE =
   'We have some problems showing the detail. Please, come back in a few minutes.';
@@ -35,8 +35,13 @@ export interface ContentProps {
 }
 
 const DetailContent: FC<ContentProps> = ({ currency, lastCheckedAt }) => {
-  const bgColor = bgColorHash.hex(currency.key);
-  const titleColor = textColorHash.hex(currency.key);
+  const bgColor = colorHashers.bg.hex(currency.key);
+  const decorationColor = colorHashers.decoration.hex(currency.key);
+  const titleColor = colorHashers.text.hex(currency.key);
+  const { isLoading, data, reset, doFetch } = useFetchConversionsHistory(
+    currency.key,
+    currency.date,
+  );
   return (
     <>
       <Head>
@@ -44,47 +49,73 @@ const DetailContent: FC<ContentProps> = ({ currency, lastCheckedAt }) => {
           {currency.name}: {currency.key}
         </title>
       </Head>
-      <ScreenWrapper bg={bgColor}>
-        <header className={styles.header}>
-          <Link href="/">
-            <a className={styles.back}>&lt; List of currencies</a>
-          </Link>
-          <hgroup className={styles.titleWrapper}>
-            <h1
-              className={styles.title}
-              style={{
-                color: titleColor,
-              }}
-            >
-              {currency.name}
-            </h1>
-            <CardTitle>{currency.key}</CardTitle>
-            <small className={styles.titleDetail}>
-              at {getFormattedDate(currency.date)}
-            </small>
-          </hgroup>
-        </header>
-        <SimpleGrid>
-          {Object.keys(currency.conversions).map((key) => (
-            <li key={key}>
-              <Link href={`/detail/${key}`} passHref>
-                <Card>
-                  <CardTitle>{key}</CardTitle>
-                  <CardText>
-                    1 {currency.key} = {currency.conversions[key]} {key}
-                  </CardText>
-                  <CardText>
-                    1 {key} = {getReversedConversion(currency.conversions[key])}{' '}
-                    {currency.key}
-                  </CardText>
-                </Card>
+      <ScreenWrapper bgColor={bgColor}>
+        <Box as="header" marginBottom={5}>
+          <Flex justifyContent="space-between" alignItems="center">
+            <NextLink href="/" passHref>
+              <Link fontSize="sm" colorScheme="purple">
+                &lt; List of currencies
               </Link>
-            </li>
-          ))}
-        </SimpleGrid>
-        <footer className={styles.footer}>
+            </NextLink>
+            <Box>
+              <Heading as="h1" color={titleColor}>
+                {currency.name}{' '}
+                <Text as="small" color={decorationColor}>
+                  {currency.key}
+                </Text>
+              </Heading>
+              <Text
+                as="footer"
+                textAlign="center"
+                fontSize="xs"
+                color="rgba(0,0,0,0.5)"
+              >
+                Conversions for: {getFormattedDate(currency.date)}
+              </Text>
+            </Box>
+            <Button
+              isLoading={isLoading}
+              size="sm"
+              colorScheme={data ? 'red' : 'purple'}
+              onClick={data ? reset : doFetch}
+            >
+              {data ? 'Close' : 'Check history'}
+            </Button>
+          </Flex>
+        </Box>
+        {data ? (
+          <HistoryTable data={data} reset={reset} />
+        ) : (
+          <ItemGrid>
+            {Object.keys(currency.conversions).map((key) => (
+              <ItemCard
+                key={key}
+                title={key}
+                titleAs="h2"
+                href={`/detail/${key}`}
+              >
+                <ConversionLine
+                  fromUnit={currency.key}
+                  toUnit={key}
+                  value={currency.conversions[key]}
+                />
+                <ConversionLine
+                  fromUnit={key}
+                  toUnit={currency.key}
+                  value={getReversedConversion(currency.conversions[key])}
+                />
+              </ItemCard>
+            ))}
+          </ItemGrid>
+        )}
+        <Box
+          as="footer"
+          textAlign="center"
+          marginTop="20px"
+          color="rgba(0,0,0,0.5)"
+        >
           Page built at: {lastCheckedAt}
-        </footer>
+        </Box>
       </ScreenWrapper>
     </>
   );
