@@ -1,5 +1,6 @@
 import { FC } from 'react';
 import type { NextPage } from 'next';
+import dynamic from 'next/dynamic';
 import Head from 'next/head';
 import NextLink from 'next/link';
 import { Box, Button, Flex, Heading, Link, Text } from '@chakra-ui/react';
@@ -10,9 +11,9 @@ import ErrorScreen from '@/components/ErrorScreen';
 import ItemGrid from '@/components/ItemGrid';
 import ItemCard from '@/components/ItemCard';
 import ConversionLine from '@/components/ConversionLine';
-import HistoryTable from './HistoryTable';
 import getReversedConversion from './getReversedConversion';
 import useFetchConversionsHistory from './useFetchConversionsHistory';
+const HistoryTable = dynamic(() => import('./HistoryTable'));
 
 export const ERROR_MESSAGE =
   'We have some problems showing the detail. Please, come back in a few minutes.';
@@ -52,11 +53,13 @@ const DetailContent: FC<ContentProps> = ({ currency, lastCheckedAt }) => {
       <ScreenWrapper bgColor={bgColor}>
         <Box as="header" marginBottom={5}>
           <Flex justifyContent="space-between" alignItems="center">
-            <NextLink href="/" passHref>
-              <Link fontSize="sm" colorScheme="purple">
-                &lt; List of currencies
-              </Link>
-            </NextLink>
+            <Box flex={1}>
+              <NextLink href="/" passHref>
+                <Link fontSize="sm" colorScheme="purple">
+                  &lt; List of currencies
+                </Link>
+              </NextLink>
+            </Box>
             <Box>
               <Heading as="h1" color={titleColor}>
                 {currency.name}{' '}
@@ -73,20 +76,22 @@ const DetailContent: FC<ContentProps> = ({ currency, lastCheckedAt }) => {
                 Conversions for: {getFormattedDate(currency.date)}
               </Text>
             </Box>
-            <Button
-              isLoading={isLoading}
-              size="sm"
-              colorScheme={data ? 'red' : 'purple'}
-              onClick={data ? reset : doFetch}
-            >
-              {data ? 'Close' : 'Check history'}
-            </Button>
+            <Box flex={1} display="flex" justifyContent="flex-end">
+              <Button
+                isLoading={isLoading}
+                size="sm"
+                colorScheme={data ? 'red' : 'purple'}
+                onClick={data ? reset : doFetch}
+              >
+                {data ? 'Close' : 'Check history'}
+              </Button>
+            </Box>
           </Flex>
         </Box>
         {data ? (
           <HistoryTable data={data} reset={reset} />
         ) : (
-          <ItemGrid>
+          <ItemGrid transition="opacity 0.3s" opacity={isLoading ? 0.3 : 1}>
             {Object.keys(currency.conversions).map((key) => (
               <ItemCard
                 key={key}

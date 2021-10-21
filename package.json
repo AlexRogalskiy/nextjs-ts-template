@@ -20,6 +20,9 @@
     "*.{js,jsx,ts,tsx}": "eslint src --fix",
     "*": "prettier --ignore-unknown --write"
   },
+  "browserslist": [
+    ">1%"
+  ],
   "dependencies": {
     "@chakra-ui/react": "^1.6.10",
     "@emotion/react": "^11",
