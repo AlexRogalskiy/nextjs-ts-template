@@ -1,6 +1,11 @@
 import getStaticProps, { REVALIDATE } from './getStaticProps';
 import { currenciesService } from '@/modules/currencies';
 import { NotFoundError } from '@/modules/error';
+import * as timeModule from '@/modules/time';
+
+jest.mock('@/modules/time', () => ({
+  getCurrentDateTime: jest.fn(() => '14/10/2021 23:23:21'),
+}));
 
 const context = { params: { key: 'ada' } };
 
