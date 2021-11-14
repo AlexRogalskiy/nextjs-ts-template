@@ -1,5 +1,6 @@
 import * as R from 'remeda';
-import { cacheFn, getHoursToExpiry, withResolvedFallback } from '../cache';
+import { cacheFn, withResolvedFallback } from '../cache';
+import { getSecondsFromHours } from '../time';
 import {
   fetchCurrencies,
   fetchConversions,
@@ -10,11 +11,11 @@ import { Adapter, Currencies } from './types';
 
 const CONFIG = {
   currencies: {
-    expiry: getHoursToExpiry(6),
+    expiry: getSecondsFromHours(6),
     fn: fetchCurrencies,
   },
   conversions: {
-    expiry: getHoursToExpiry(1),
+    expiry: getSecondsFromHours(1),
     fn: fetchConversions,
   },
 } as const;
