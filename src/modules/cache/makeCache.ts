@@ -1,5 +1,5 @@
 import * as R from 'remeda';
-import { getNow } from '@/modules/time';
+import { getNow } from '@/utils/time';
 
 interface StoreItem<DataItem> {
   saved: number;

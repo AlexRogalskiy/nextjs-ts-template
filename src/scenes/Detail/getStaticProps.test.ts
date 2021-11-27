@@ -1,9 +1,9 @@
 import getStaticProps, { REVALIDATE } from './getStaticProps';
 import { currenciesService } from '@/modules/currencies';
 import { NotFoundError } from '@/modules/error';
-import * as timeModule from '@/modules/time';
+import * as timeModule from '@/utils/time';
 
-jest.mock('@/modules/time', () => ({
+jest.mock('@/utils/time', () => ({
   getCurrentDateTime: jest.fn(() => '14/10/2021 23:23:21'),
 }));
 

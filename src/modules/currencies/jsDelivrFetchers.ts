@@ -1,6 +1,6 @@
 import * as R from 'remeda';
-import httpClient, { Get } from '@/modules/httpClient';
-import { replace } from '@/modules/utils';
+import httpClient, { HttpClient } from '@/modules/httpClient';
+import { replace } from '@/utils/string';
 
 /**
  * CONFIG
@@ -29,9 +29,8 @@ export type CurrenciesMap = Record<string, string>;
 export const getCurrenciesParsedURL = (dateStr?: string) =>
   R.pipe(URLS.currencies, dateReplacer(dateStr));
 
-export const fetchCurrencies = R.createPipe(
-  getCurrenciesParsedURL,
-  httpClient.get as Get<CurrenciesMap>,
+export const fetchCurrencies = R.createPipe(getCurrenciesParsedURL, (url) =>
+  httpClient.get<CurrenciesMap>(url),
 );
 
 /**

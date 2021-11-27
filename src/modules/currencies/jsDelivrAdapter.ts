@@ -1,6 +1,6 @@
 import * as R from 'remeda';
 import { cacheFn, withResolvedFallback } from '../cache';
-import { getSecondsFromHours } from '../time';
+import { getSecondsFromHours } from '@/utils/time';
 import {
   fetchCurrencies,
   fetchConversions,

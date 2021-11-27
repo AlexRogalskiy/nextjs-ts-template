@@ -1,5 +1,5 @@
 import * as R from 'remeda';
-import { multiply, divide, dividePer } from '@/modules/utils';
+import { multiply, divide, dividePer } from '@/utils/math';
 
 const FACTOR = 1000000;
 

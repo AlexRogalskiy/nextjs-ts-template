@@ -22,7 +22,7 @@ const HistoryTable: FC<Props> = ({ data, reset }) => (
     </Thead>
     <Tbody>
       {data.conversions.map((conversion) => (
-        <Tr color={colorHashers.text.hex(conversion.key)} key={conversion.key}>
+        <Tr color={colorHashers.text(conversion.key)} key={conversion.key}>
           <Td textAlign="center">{conversion.key}</Td>
           {conversion.values.map((value) => (
             <Td key={value} textAlign="right">

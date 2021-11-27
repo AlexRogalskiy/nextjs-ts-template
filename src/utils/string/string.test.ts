@@ -1,4 +1,4 @@
-import { replace } from './string';
+import { replace } from '.';
 
 describe('replace', () => {
   test('should work when passing 3 params', () => {

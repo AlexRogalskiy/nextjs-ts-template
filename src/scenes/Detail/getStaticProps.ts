@@ -2,7 +2,7 @@ import { GetStaticProps } from 'next';
 import { ParsedUrlQuery } from 'querystring';
 import { currenciesService } from '@/modules/currencies';
 import logger from '@/modules/logger';
-import { getCurrentDateTime } from '@/modules/time';
+import { getCurrentDateTime } from '@/utils/time';
 import { Props } from './Detail.page';
 
 export const REVALIDATE = {

@@ -86,8 +86,8 @@ const ItemCardTitle: FC<TitleProps> = ({
 );
 
 const ItemCard: FC<Props> = ({ title, titleAs = 'h3', href, children }) => {
-  const dotColor = colorHashers.decoration.hex(title);
-  const textColor = colorHashers.text.hex(title);
+  const dotColor = colorHashers.decoration(title);
+  const textColor = colorHashers.text(title);
   return (
     <ItemCardBox>
       <ItemCardTitle as={titleAs} textColor={textColor} dotColor={dotColor}>

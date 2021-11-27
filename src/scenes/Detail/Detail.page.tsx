@@ -36,9 +36,9 @@ export interface ContentProps {
 }
 
 const DetailContent: FC<ContentProps> = ({ currency, lastCheckedAt }) => {
-  const bgColor = colorHashers.bg.hex(currency.key);
-  const decorationColor = colorHashers.decoration.hex(currency.key);
-  const titleColor = colorHashers.text.hex(currency.key);
+  const bgColor = colorHashers.bg(currency.key);
+  const decorationColor = colorHashers.decoration(currency.key);
+  const titleColor = colorHashers.text(currency.key);
   const { isLoading, data, reset, doFetch } = useFetchConversionsHistory(
     currency.key,
     currency.date,
